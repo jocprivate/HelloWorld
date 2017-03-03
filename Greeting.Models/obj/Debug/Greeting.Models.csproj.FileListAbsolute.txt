@@ -1,0 +1,4 @@
+C:\Projects\Management\Greetings\Greeting.Models\bin\Debug\Greeting.Models.dll
+C:\Projects\Management\Greetings\Greeting.Models\bin\Debug\Greeting.Models.pdb
+C:\Projects\Management\Greetings\Greeting.Models\obj\Debug\Greeting.Models.dll
+C:\Projects\Management\Greetings\Greeting.Models\obj\Debug\Greeting.Models.pdb

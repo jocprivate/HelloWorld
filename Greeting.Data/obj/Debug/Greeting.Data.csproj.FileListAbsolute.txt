@@ -1,0 +1,7 @@
+C:\Projects\Management\Greetings\Greeting.Data\obj\Debug\Greeting.Data.csprojResolveAssemblyReference.cache
+C:\Projects\Management\Greetings\Greeting.Data\bin\Debug\Greeting.Data.dll
+C:\Projects\Management\Greetings\Greeting.Data\bin\Debug\Greeting.Data.pdb
+C:\Projects\Management\Greetings\Greeting.Data\bin\Debug\Greeting.Models.dll
+C:\Projects\Management\Greetings\Greeting.Data\bin\Debug\Greeting.Models.pdb
+C:\Projects\Management\Greetings\Greeting.Data\obj\Debug\Greeting.Data.dll
+C:\Projects\Management\Greetings\Greeting.Data\obj\Debug\Greeting.Data.pdb

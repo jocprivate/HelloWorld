@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <!-- DataTables -->
+ <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
+ <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+ <link rel="stylesheet" type="text/css" href="css/school.css">
+ <link rel="stylesheet" type="text/css" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+ <script src="Scripts/jquery-2.1.1.min.js"></script>
+ <script src="Scripts/bootstrap.min.js"></script>
+ <script type="text/javascript" charset="utf8" src="Scripts/DataTables-1.10.13/media/js/jquery.dataTables.js"></script>
+
+</head>
+<body>
+<script>
+function EditGreetingClick(id)
+{
+	alert('Place to Program Ability for Editing Greeting Id: '+ id);
+}
+
+function DeleteGreetingClick(id)
+{
+	alert('Place to Program Ability for Deleting Greeting Id: '+ id);
+}
+
+function AddGreetingClick()
+{
+	alert('Place to Program Ability To Add Greeting');
+}
+	$(document).ready(function () {
+        $.ajax({
+            url: 'http://localhost:55555/api/greeting',
+            type: "GET",
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                $('#greeting').DataTable({
+                    "data": data,
+                    "dom": "<'row'<'col-md-11'<'pull-left'f><'pull-right'l>r<'clearfix'>>>t<'row'<'col-md-11'<'addButton'><'pull-left'i><'pull-right'p><'clearfix'>>>",
+                    "columns": [
+                        {
+                            "render": function (data, type, row, meta) {
+                                return '<a class=\'btn btn-primary  btn-xs\' onclick="EditGreetingClick(\'' + row.Id + '\')"><i class="fa fa-edit"></i></a>';
+                            }
+                        },
+                         {
+                             name: 'Id',
+                             data: 'Id',
+                             title: "Greeting Id"
+                         },                        
+						{
+                            name: 'Name',
+                            data: 'Name',
+                            title: "Name"
+                        },
+{
+                            name: 'IsNice',
+                            data: 'IsNice',
+                            title: "Is Nice"
+                        },						
+                        {
+                            "render": function (data, type, row, meta) {
+                                return '<a class=\'btn btn-danger btn-xs\' onclick="DeleteGreetingClick(\'' + row.Id + '\')"><i class="fa fa-trash-o"></i></a>';
+                            }
+                        }
+                    ],
+                });
+                
+                $("div.addButton").html("<br /><button class='btn btn-primary' onclick='AddGreetingClick()'><i class='fa fa-plus-circle'><span style='font-family:\"Open Sans\",Arial,Helvetica,Sans-Serif;'> ADD</span></button>");
+            },
+            error: function (e) {
+                alert(e);
+            }
+        });
+
+
+    });
+</script>
+<div id="container">
+<div id="content">
+    <div class="row">
+        <div class="col-md-7">
+            <div class="row">
+                <h1 class="page-title txt-color-blueDark">
+                    <i class="fa-fw fa fa-home"></i>
+                    Management <span> > Greeting</span>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-7">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="panel-title">Greeting</span>
+                </div>
+                <div class="panel-body">
+                    <table id="greeting" class="table table-bordered table-hover table-striped" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th style="width:15px;"></th>
+                                <th></th>
+								<th></th>
+								<th></th>
+                                <th style="width:15px;"></th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+
+</body>
+</html>
